@@ -41,4 +41,4 @@ steps:
     #Note that deployment slots is not supported for Linux Dynamic SKU
     deployToSlotOrASE: true
     resourceGroupName: 'fhlbc'
-    slotName: 'cin'
+    slotName: ''
