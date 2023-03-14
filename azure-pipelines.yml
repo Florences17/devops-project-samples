@@ -1,5 +1,13 @@
 pool:
   vmImage: ubuntu-latest
+
+variables:
+  # Azure service connection established during pipeline creation
+  azureSubscription: Pay-As-You-Go
+  appName: FHLBC
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+  
 steps:
 - task: UsePythonVersion@0
   displayName: "Setting Python version to 3.7 as required by functions"
@@ -25,15 +33,7 @@ steps:
 
 trigger:
 - main
-
-variables:
-  # Azure service connection established during pipeline creation
-  azureSubscription: Pay-As-You-Go
-  appName: FHLBC
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
   
-steps:
 - task: AzureFunctionApp@1 # Add this at the end of your file
   inputs:
     azureSubscription: FHLBC-SC
